@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tractmotor Parts (M) Sdn Bhd — Vícta & Farmate Knapsack Sprayers</title>
+<style>
+  :root{
+    --navy:#12206e;
+    --navy-dark:#0b1650;
+    --teal:#1fb6c9;
+    --teal-dark:#128c9c;
+    --orange:#f0592b;
+    --red:#e8442c;
+    --ink:#1c2333;
+    --muted:#5c6478;
+    --bg:#f7f9fc;
+    --card:#ffffff;
+    --border:#e3e8f0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-wrap{
+    max-width:1180px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-logo{
+    width:44px; height:44px; border-radius:9px; object-fit:contain;
+    background:#fff; flex-shrink:0;
+  }
+  .brand-logo-fallback{
+    width:44px; height:44px; border-radius:9px; flex-shrink:0; display:none;
+    background:linear-gradient(135deg, var(--red) 0%, var(--red) 50%, #1c1c1c 50%);
+    align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:20px;
+  }
+  .brand-name{font-size:15px; font-weight:800; color:var(--navy); line-height:1.2;}
+  .brand-name small{display:block; font-size:10.5px; font-weight:600; color:var(--muted); letter-spacing:.4px;}
+  nav ul{list-style:none; display:flex; gap:32px;}
+  nav a{font-weight:600; font-size:15px; color:var(--ink);}
+  nav a:hover{color:var(--teal-dark);}
+  .btn{
+    display:inline-block; padding:12px 26px; border-radius:30px;
+    font-weight:700; font-size:15px; transition:all .2s ease;
+  }
+  .btn-primary{background:var(--teal); color:#fff;}
+  .btn-primary:hover{background:var(--teal-dark);}
+  .btn-outline{border:2px solid var(--navy); color:var(--navy);}
+  .btn-outline:hover{background:var(--navy); color:#fff;}
+  .nav-cta{display:none;}
+  @media(min-width:860px){ .nav-cta{display:inline-block;} }
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(120deg, var(--navy) 0%, var(--navy-dark) 55%, #091040 100%);
+    color:#fff; padding:80px 24px 90px; text-align:center; position:relative; overflow:hidden;
+  }
+  .hero::before{
+    content:""; position:absolute; width:600px; height:600px; border-radius:50%;
+    background:radial-gradient(circle, rgba(31,182,201,0.25), transparent 70%);
+    top:-250px; right:-200px;
+  }
+  .hero-inner{max-width:760px; margin:0 auto; position:relative; z-index:2;}
+  .eyebrow{
+    text-transform:uppercase; letter-spacing:3px; font-size:13px; font-weight:700;
+    color:var(--teal); margin-bottom:16px; display:inline-block;
+  }
+  .hero h1{font-size:44px; font-weight:800; margin-bottom:18px; line-height:1.2;}
+  .hero p{font-size:18px; color:#c8cfe8; margin-bottom:34px;}
+  .hero-actions{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .hero-actions .btn-outline{border-color:#fff; color:#fff;}
+  .hero-actions .btn-outline:hover{background:#fff; color:var(--navy);}
+
+  /* SECTION SHELL */
+  section.product{padding:80px 24px;}
+  .product-wrap{
+    max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr;
+    gap:60px; align-items:center;
+  }
+  @media(max-width:860px){ .product-wrap{grid-template-columns:1fr;} }
+  .product.alt .product-wrap{direction:rtl;}
+  .product.alt .product-wrap > *{direction:ltr;}
+
+  .photo-frame{
+    background:#fff; border:1px solid var(--border); border-radius:20px;
+    padding:24px; box-shadow:0 20px 50px -20px rgba(18,32,110,0.25);
+    display:flex; align-items:center; justify-content:center; min-height:340px; position:relative;
+  }
+  .photo-frame img{border-radius:10px;}
+  .photo-fallback{
+    display:none; flex-direction:column; align-items:center; gap:10px;
+    color:var(--muted); font-size:14px; text-align:center; padding:40px;
+  }
+  .photo-fallback .icon{font-size:36px;}
+
+  .tag-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;}
+  .tag{
+    background:rgba(31,182,201,0.12); color:var(--teal-dark); font-weight:700;
+    font-size:12px; padding:6px 14px; border-radius:20px; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .tag.orange{background:rgba(240,89,43,0.12); color:var(--red);}
+
+  .product h2{font-size:32px; font-weight:800; margin-bottom:6px; color:var(--navy);}
+  .product .subhead{color:var(--muted); font-size:16px; margin-bottom:22px;}
+  .feature-list{list-style:none; margin-bottom:26px;}
+  .feature-list li{
+    position:relative; padding-left:28px; margin-bottom:12px; font-size:15.5px; color:var(--ink);
+  }
+  .feature-list li::before{
+    content:"✓"; position:absolute; left:0; top:0; color:#fff; background:var(--teal);
+    width:19px; height:19px; border-radius:50%; font-size:12px; display:flex; align-items:center; justify-content:center;
+  }
+  .product.alt .feature-list li::before{background:var(--red);}
+
+  .spec-table{width:100%; border-collapse:collapse; margin-bottom:26px; font-size:14.5px;}
+  .spec-table td{padding:9px 12px; border-bottom:1px solid var(--border);}
+  .spec-table td:first-child{color:var(--muted); font-weight:600; width:45%;}
+  .spec-table td:last-child{font-weight:700; color:var(--ink);}
+
+  .product-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* COMPARISON */
+  .compare{background:#fff; padding:70px 24px; border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .compare-inner{max-width:1000px; margin:0 auto; text-align:center;}
+  .compare h2{font-size:30px; color:var(--navy); font-weight:800; margin-bottom:8px;}
+  .compare p.lead{color:var(--muted); margin-bottom:40px; font-size:16px;}
+  table.cmp{width:100%; border-collapse:collapse; text-align:left; font-size:14.5px;}
+  table.cmp th, table.cmp td{padding:14px 16px; border-bottom:1px solid var(--border);}
+  table.cmp th{color:var(--muted); text-transform:uppercase; font-size:12px; letter-spacing:.5px;}
+  table.cmp td:first-child{font-weight:700; color:var(--ink);}
+  table.cmp tr:hover{background:var(--bg);}
+  .col-victa{color:var(--teal-dark); font-weight:700;}
+  .col-farmate{color:var(--red); font-weight:700;}
+
+  /* CONTACT */
+  .contact{background:linear-gradient(120deg, var(--navy-dark), var(--navy)); color:#fff; padding:80px 24px;}
+  .contact-inner{max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:50px;}
+  @media(max-width:860px){ .contact-inner{grid-template-columns:1fr;} }
+  .contact h2{font-size:32px; font-weight:800; margin-bottom:14px;}
+  .contact p{color:#c8cfe8; margin-bottom:26px; font-size:15.5px;}
+  .contact-detail{display:flex; gap:14px; margin-bottom:18px; align-items:flex-start;}
+  .contact-detail .ic{
+    width:38px; height:38px; border-radius:10px; background:rgba(31,182,201,0.18);
+    display:flex; align-items:center; justify-content:center; color:var(--teal); font-size:18px; flex-shrink:0;
+  }
+  .contact-detail div b{display:block; font-size:14px; color:#fff;}
+  .contact-detail div span{font-size:14px; color:#aeb6d4;}
+
+  form.enquiry{
+    background:#fff; border-radius:18px; padding:32px; color:var(--ink);
+  }
+  form.enquiry h3{font-size:18px; margin-bottom:18px; color:var(--navy);}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;}
+  @media(max-width:520px){ .form-row{grid-template-columns:1fr;} }
+  label{font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px; display:block;}
+  input, select, textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--border); border-radius:8px;
+    font-size:14.5px; font-family:inherit; color:var(--ink); background:#f9fafc;
+  }
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--teal);}
+  textarea{resize:vertical; min-height:90px;}
+  .full-row{margin-bottom:14px;}
+  form.enquiry .btn-primary{width:100%; border:none; cursor:pointer; margin-top:6px; font-size:15.5px;}
+
+  footer{
+    background:#0b1650; color:#93a0c9; text-align:center; padding:34px 24px; font-size:13.5px;
+  }
+  footer .brand{justify-content:center; margin-bottom:14px;}
+  footer .brand-name{color:#fff;}
+  footer .brand-name small{color:#93a0c9;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="images/company-logo.png" alt="Tractmotor Parts (M) Sdn Bhd" class="brand-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="brand-logo-fallback">P</div>
+      <div class="brand-name">TRACTMOTOR PARTS (M) SDN BHD<small>Vícta &amp; Farmate Authorized Distributor</small></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#victa-b16">Battery Sprayer</a></li>
+        <li><a href="#farmate-fm820">Petrol Sprayer</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Coming Soon · Pre-Order Enquiries Open</span>
+    <h1>Spray Smarter. Work Lighter.<br>Two Sprayers, Built to Perform.</h1>
+    <p>Introducing our new knapsack sprayer lineup — the Vícta B16 battery-powered sprayer for quiet, effortless coverage, and the Farmate FM820 petrol sprayer for high-pressure, heavy-duty jobs. Built for growers, landscapers and pest control pros.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Enquire Now</a>
+      <a href="#compare" class="btn btn-outline">Compare Models</a>
+    </div>
+  </div>
+</section>
+
+<section class="product" id="victa-b16">
+  <div class="product-wrap">
+    <div class="photo-frame">
+      <img src="images/victa-b16.jpg" alt="Vícta B16 Knapsack Battery Sprayer"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-fallback">
+        <span class="icon">📷</span>
+        Add product photo here<br><code>images/victa-b16.jpg</code>
+      </div>
+    </div>
+    <div>
+      <div class="tag-row">
+        <span class="tag">Battery Powered</span>
+        <span class="tag">16L Tank</span>
+      </div>
+      <h2>Vícta B16 Knapsack Battery Sprayer</h2>
+      <p class="subhead">Quiet, cordless spraying with up to 5 hours of runtime — ideal for daily use around the farm, garden or nursery.</p>
+      <ul class="feature-list">
+        <li>16L tank with dual-opening lids for easy fill and cleaning</li>
+        <li>12V rechargeable battery — 3 to 5 hours of continuous work time</li>
+        <li>Adjustable lance with fine mist to jet stream nozzle</li>
+        <li>Includes single, brush, double and triple-nozzle boom attachments</li>
+        <li>Padded, ventilated backrest for all-day comfort</li>
+        <li>Lightweight at just 5.5kg empty</li>
+      </ul>
+      <table class="spec-table">
+        <tr><td>Tank Capacity</td><td>16 L</td></tr>
+        <tr><td>Voltage / Current</td><td>12VDC / 2A</td></tr>
+        <tr><td>Open Flow / Max Pressure</td><td>3 LPM / 80 Psi</td></tr>
+        <tr><td>Battery / Charger</td><td>12V 8A / 1.0A</td></tr>
+        <tr><td>Work Time</td><td>3–5 hours</td></tr>
+        <tr><td>Net Weight</td><td>5.5 kg</td></tr>
+      </table>
+      <div class="product-actions">
+        <a href="#contact" class="btn btn-primary">Enquire About B16</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product alt" id="farmate-fm820" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="product-wrap">
+    <div class="photo-frame">
+      <img src="images/farmate-fm820.jpg" alt="Farmate FM820 20L Petrol Knapsack Sprayer"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-fallback">
+        <span class="icon">📷</span>
+        Add product photo here<br><code>images/farmate-fm820.jpg</code>
+      </div>
+    </div>
+    <div>
+      <div class="tag-row">
+        <span class="tag orange">Petrol Engine</span>
+        <span class="tag orange">20L Tank</span>
+      </div>
+      <h2>Farmate FM820 Petrol Knapsack Sprayer</h2>
+      <p class="subhead">High-output, high-pressure spraying with a grease-free copper pump — built for large plots and tough jobs.</p>
+      <ul class="feature-list">
+        <li>20L anti-shake tank keeps the load stable while walking</li>
+        <li>Grease-free copper pump for consistent, low-maintenance pressure</li>
+        <li>Powerful TU26 26cc engine delivers up to 40 kg/cm² pressure</li>
+        <li>Stainless steel spray lance with ergonomic red-grip handle</li>
+        <li>Includes mixing bottle, funnel, spanners and hex key toolkit</li>
+        <li>New 2018 redesign for improved durability and balance</li>
+      </ul>
+      <table class="spec-table">
+        <tr><td>Tank Capacity</td><td>20 L</td></tr>
+        <tr><td>Engine</td><td>TU26, 26cc</td></tr>
+        <tr><td>Max Pressure</td><td>40 kg/cm²</td></tr>
+        <tr><td>Pump</td><td>Grease-free copper pump</td></tr>
+        <tr><td>Tank Design</td><td>Anti-shake construction</td></tr>
+        <tr><td>Included Accessories</td><td>Lance, funnel, mixing bottle, tool kit</td></tr>
+      </table>
+      <div class="product-actions">
+        <a href="#contact" class="btn btn-primary" style="background:var(--red);">Enquire About FM820</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare" id="compare">
+  <div class="compare-inner">
+    <h2>Which Sprayer Is Right For You?</h2>
+    <p class="lead">A quick side-by-side to help you choose the right tool for the job.</p>
+    <table class="cmp">
+      <thead>
+        <tr><th>Spec</th><th class="col-victa">Vícta B16</th><th class="col-farmate">Farmate FM820</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Power Source</td><td>12V Battery</td><td>Petrol (TU26 26cc)</td></tr>
+        <tr><td>Tank Capacity</td><td>16 L</td><td>20 L</td></tr>
+        <tr><td>Max Pressure</td><td>80 Psi</td><td>40 kg/cm²</td></tr>
+        <tr><td>Weight (empty)</td><td>5.5 kg</td><td>Heavier (engine + tank)</td></tr>
+        <tr><td>Noise Level</td><td>Quiet</td><td>Engine noise</td></tr>
+        <tr><td>Best For</td><td>Daily use, small–mid plots, indoor/greenhouse friendly</td><td>Large plots, heavy-duty, extended spraying sessions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2>Get Early Access & Pricing</h2>
+      <p>Leave your details and let us know which sprayer you're interested in. We'll follow up with pricing, availability and pre-order info.</p>
+      <div class="contact-detail">
+        <div class="ic">✆</div>
+        <div><b>Phone / WhatsApp</b><span>016-331 0883</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ic">✉</div>
+        <div><b>Email</b><span>susiesltan@gmail.com</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="ic">📍</div>
+        <div><b>Location</b><span>No. 14, Jalan SBC 6, Taman Sri Batu Caves, 68100 Batu Caves, Selangor</span></div>
+      </div>
+    </div>
+    <form class="enquiry" action="mailto:susiesltan@gmail.com" method="post" enctype="text/plain">
+      <h3>Product Enquiry Form</h3>
+      <div class="form-row">
+        <div>
+          <label>Full Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input type="tel" name="phone" required>
+        </div>
+      </div>
+      <div class="full-row">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="full-row">
+        <label>Product Interested In</label>
+        <select name="product">
+          <option>Vícta B16 Battery Sprayer</option>
+          <option>Farmate FM820 Petrol Sprayer</option>
+          <option>Both / Not sure yet</option>
+        </select>
+      </div>
+      <div class="full-row">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell us about your needs — quantity, timeline, etc."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <img src="images/company-logo.png" alt="Tractmotor Parts (M) Sdn Bhd" class="brand-logo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="brand-logo-fallback">P</div>
+    <div class="brand-name">TRACTMOTOR PARTS (M) SDN BHD</div>
+  </div>
+  <div>© 2026 Tractmotor Parts (M) Sdn Bhd. All rights reserved. Product specifications subject to change.</div>
+</footer>
+
+</body>
+</html>
